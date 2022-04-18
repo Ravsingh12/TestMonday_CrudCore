@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Chetu</h1>
+
+</div>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+
+
+
+            <td><a asp-action="edit" asp-controller="Home" asp-route-Id="@item.Id" class="btn btn-danger">Edit</a></td>
+            <td><a asp-action="delete" asp-controller="Home" asp-route-Id="@item.Id" class="btn btn-success">Delete</a></td>
+        </tr>
+
+    }
+</table>
